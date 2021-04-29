@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import API from './API';
 import reportWebVitals from './reportWebVitals';
+import APIAxios from './APIAxios';
 
 ReactDOM.render(
   <React.StrictMode>
-    <API />
+    <APIAxios />
   </React.StrictMode>,
   document.getElementById('root')
 );
