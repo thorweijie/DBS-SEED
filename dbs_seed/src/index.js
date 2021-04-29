@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import APIAxios from './APIAxios';
+import App from './ReactRouter';
 
 ReactDOM.render(
   <React.StrictMode>
-    <APIAxios />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
