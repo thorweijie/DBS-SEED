@@ -3,10 +3,12 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
-}    from 'react-router-dom'
+    Link,
+    useRouteMatch,
+    useParams
+}    from 'react-router-dom';
 
-export default BasicExample = () => {
+const App = () => {
     return (
         <Router>
             <div>
@@ -18,7 +20,7 @@ export default BasicExample = () => {
                         <Link to = '/about'>About</Link>
                     </li>
                     <li>
-                        <Link to = '/dashboard'>Dashboard</Link>
+                        <Link to = '/topics'>Topics</Link>
                     </li>
                 </ul>
                 <hr/>
@@ -30,8 +32,8 @@ export default BasicExample = () => {
                     <Route path = '/about'>
                         <About/>
                     </Route>
-                    <Route path = '/dashboard'>
-                        <Dashboard/>
+                    <Route path = '/topics'>
+                        <Topics/>
                     </Route>
                 </Switch>
             </div>
@@ -49,7 +51,42 @@ let About = () =>
         <h2>About</h2>
     </>
 
-let Dashboard = () =>
+let Topics = () => {
+    let {path, url} = useRouteMatch();
+    return (
     <>
-        <h2>Dashboard</h2>
+        <h2>Topics</h2>
+        <ul>
+            <li>
+                <Link to = {`${url}/rendering`}>Rendering with React</Link>
+            </li>
+            <li>
+                <Link to = {`${url}/components`}>Components</Link>
+            </li>
+            <li>
+                <Link to = {`${url}/props-v-state`}>Props v. State</Link>
+            </li>
+        </ul>
+
+        <Switch>
+            <Route exact path = {path}>
+                Please select a topic
+            </Route>
+            <Route path = {`${path}/:topicId`}>
+                <Topic/>
+            </Route>
+        </Switch>
     </>
+    )
+}
+
+let Topic = () => {
+    let {topicId} = useParams();
+    return (
+    <>
+        <h3>{topicId}</h3>
+    </>
+    )
+}
+
+export default App
