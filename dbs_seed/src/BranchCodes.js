@@ -857,7 +857,6 @@ let branchNameCodes = {}
 
 branchCodes.forEach((element, i) => branchNameCodes[element] = branchName[i]);
 
-export {branchNameCodes}
-
+export {branchNameCodes} 
 
 

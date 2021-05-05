@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './ReactRouter';
+import App from './Bootstrap&Formik';
 
 ReactDOM.render(
   <React.StrictMode>
