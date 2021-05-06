@@ -4,7 +4,7 @@ import {nricValidator} from './SingaporeNricValidator';
 import {branchNameCodes} from './BranchCodes';
 import * as yup from "yup";
 import { Formik } from "formik";
-import { Form, Col, Button, Container } from 'react-bootstrap';
+import { Form, Col, Button, Container, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -66,6 +66,7 @@ function FormExample() {
       }) => (
         <Container className = 'border'>
         <Form noValidate onSubmit={handleSubmit}>
+        <Image className = 'img' src="https://logos-download.com/wp-content/uploads/2016/12/DBS_Bank_logo_logotype.png"/>
           <Form.Row>
             <Form.Group as={Col} md="5" controlId="validationFormik01">
               <Form.Label>Customer Name</Form.Label>
@@ -163,7 +164,7 @@ function FormExample() {
             </Form.Group>
           </Form.Row>
           <Form.Group>
-            <Form.Check id="validationFormik0">
+            <Form.Check id="validationFormik0" custom>
               <Form.Check.Input
                   required
                   name="terms"
